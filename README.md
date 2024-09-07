@@ -1,6 +1,6 @@
 # dump-ipa.sh
 
-This simple script uses SSH to connect to a jailbroken iOS device and [appdecrypt](https://github.com/paradiseduo/appdecrypt) to dump and download a decrypted IPA using of any app on that device.
+This simple script uses SSH to connect to a jailbroken iOS device and [appdecrypt](https://github.com/paradiseduo/appdecrypt) to dump and download a decrypted IPA using of any app from that device.
 
 ```
 Usage: ./dump-ipa.sh [-h] [-H <ip>] [-u <user>] [-o <output_directory>] <app_name>
