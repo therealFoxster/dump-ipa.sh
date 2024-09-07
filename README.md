@@ -1,6 +1,6 @@
 # dump-ipa.sh
 
-This simple script connects to a jailbroken iOS device (SSH) downloads a decrypted IPA ([appdecrypt](https://github.com/paradiseduo/appdecrypt)) of any app on that device.
+This simple script uses SSH to connect to a jailbroken iOS device and [appdecrypt](https://github.com/paradiseduo/appdecrypt) to dump and download a decrypted IPA using of any app on that device.
 
 ```
 Usage: ./dump-ipa.sh [-h] [-H <ip>] [-u <user>] [-o <output_directory>] <app_name>
@@ -23,12 +23,12 @@ Note: -H (IP address) and -u (username) options are required if .env file is not
 1. Create a `.env` file in the same directory as the script with the following values:
 
 ```bash
-ip=# The IP address of the jailbroken iOS device
-user=# The username of the jailbroken iOS device (usually 'root')
+ip=#<your_ip_addr>
+user=#<your_username>
 ```
 
 > [!NOTE]
-> If you prefer not to create an `.env` file, you can provide the values to the script as arguments. I recommend creating one tho so you don't have to type in the same stuff in every time.
+> If you prefer not to create an `.env` file, you can provide the values as arguments when running the script. I recommend creating one tho so you don't have to type in the same stuff in every time.
 
 2. Then, run the script passing in the app's name (case-insensitive), so something like:
 
@@ -38,8 +38,11 @@ user=# The username of the jailbroken iOS device (usually 'root')
 
 3. You will have to authenticate for SSH 3 times (1 to send `appdecrypt`, 1 to find and decrypt the app, and 1 to download it) which is not ideal but I haven't been able to come up with a better solution yet.
 
-4. If all goes well, your decrypted IPA file land in `~/Downloads`.
+4. If all goes well, your decrypted IPA file will land in `~/Downloads`.
 
 ## Known issues
 - Download sometimes fails with error `client_loop: send disconnect: Broken pipe`.
 - Finding and decrypting step takes forever sometimes.
+
+## License
+[The MIT License](LICENSE)
