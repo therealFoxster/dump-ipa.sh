@@ -14,7 +14,7 @@ Note: -H (IP address) and -u (username) options are required if .env file is not
 
 ## Requirements
 
-- [appdecrypt](https://github.com/paradiseduo/appdecrypt) iOS binary. The script currently expects this file to be in `~/appdecrypt/appdecrypt`, but you can modify this to your preference.
+- [appdecrypt](https://github.com/paradiseduo/appdecrypt) iOS binary. The script currently expects this file to be in `~/appdecrypt/appdecrypt` but you can modify this to your preference.
 
 - `plutil` installed on the jailbroken device.
 
