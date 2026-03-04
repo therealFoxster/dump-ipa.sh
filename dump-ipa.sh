@@ -108,7 +108,7 @@ if [[ ! -f ~/appdecrypt/appdecrypt ]]; then
 fi
 
 echo "Sending appdecrypt to remote device..."
-scp ~/appdecrypt/appdecrypt "$user@$ip:/tmp"
+rsync -azP ~/appdecrypt/appdecrypt "$user@$ip:/tmp/"
 if [[ $? -ne 0 ]]; then
     error "Unable to send appdecrypt to remote device."
 fi
@@ -137,7 +137,7 @@ version=$(echo -e "$app_info" | grep version | awk '{print $2}')
 filename="${app_name}_${version}.ipa"
 
 echo "Downloading $filename..."
-scp "$user@$ip:/tmp/$filename" "$output"
+rsync -azP "$user@$ip:/tmp/$filename" "$output/"
 if [[ $? -eq 0 ]]; then
     echo "Downloaded to ${output}/${filename}."
 else
