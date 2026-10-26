@@ -50,6 +50,7 @@ function find_and_decrypt() {
         if [[ -d "/tmp/Payload" ]]; then
             cd "/tmp/Payload"
             rm *.plist
+            rm -f .*.plist
             cd .. # /tmp/
             zip -rq "${name}_${version}.ipa" "Payload"
         else
